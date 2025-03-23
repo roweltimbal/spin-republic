@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Navigation from "./routes/navigation/navigation.component";
+import Home from "./routes/home/home.component";
+import Authentication from "./routes/authentication/authentication.component";
+import ContactUs from "./routes/contactus/contactus.component";
+import Shop from "./routes/shop/shop.component";
+import { ThemeProvider } from "@emotion/react";
+import lightTheme from "./theme";
+import Container from "@mui/material/Container";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="auth" element={<Authentication />} />
+          <Route path="contactus" element={<ContactUs />} />
+          <Route path="shop" element={<Shop />} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
