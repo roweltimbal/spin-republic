@@ -1,7 +1,13 @@
+import { Outlet, Navigate, useLocation } from "react-router-dom";
+
 const Authentication = () => {
+  const location = useLocation();
+  if (location.pathname === "/auth") {
+    return <Navigate to="/auth/signup" replace />;
+  }
   return (
     <div>
-      <h1>This is authentication page</h1>
+      <Outlet />
     </div>
   );
 };

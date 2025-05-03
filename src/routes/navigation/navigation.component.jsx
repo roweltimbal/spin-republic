@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import logoCropped from "../../assets/srblackpngcropped.png";
 
-const pages = ["Contact Us", "Shop", "Sign In"];
+const pages = ["Contact Us", "Shop", "Sign In/Sign Up"];
 
 function Navigation() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -80,7 +80,7 @@ function Navigation() {
                     to={
                       page === "Contact Us"
                         ? "/contactus"
-                        : page === "Sign In"
+                        : page === "Sign In/Sign Up"
                         ? "/auth"
                         : "/shop"
                     }
@@ -116,7 +116,7 @@ function Navigation() {
                   to={
                     page === "Contact Us"
                       ? "/contactus"
-                      : page === "Sign In"
+                      : page === "Sign In/Sign Up"
                       ? "/auth"
                       : "/shop"
                   }

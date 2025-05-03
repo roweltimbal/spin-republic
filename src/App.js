@@ -8,7 +8,9 @@ import ContactUs from "./routes/contactus/contactus.component";
 import Shop from "./routes/shop/shop.component";
 import { ThemeProvider } from "@emotion/react";
 import lightTheme from "./theme";
-import Container from "@mui/material/Container";
+
+import SignUp from "./components/signup/signup.component";
+import SignIn from "./components/signin/signin.component";
 
 const App = () => {
   return (
@@ -16,7 +18,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="auth" element={<Authentication />} />
+          <Route path="auth" element={<Authentication />}>
+            <Route path="signin" element={<SignIn />} />
+            <Route path="signup" element={<SignUp />} />
+          </Route>
           <Route path="contactus" element={<ContactUs />} />
           <Route path="shop" element={<Shop />} />
         </Route>
