@@ -10,8 +10,10 @@ const lightTheme = createTheme({
       primary: "#000000",
     },
     primary: {
-      main: "#E8006D",
-      dark: "#C7005E",
+      // main: "#E8006D",
+      // dark: "#C7005E",
+       main: "#CE0D0D",
+      dark: "#A50A0A",
     },
   },
 });
